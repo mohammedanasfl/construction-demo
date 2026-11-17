@@ -1,0 +1,31 @@
+---
+const { active = "" } = Astro.props;
+---
+<!-- Navbar Start -->
+        <div class="container-fluid sticky-top px-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-light py-3 px-4">
+                <a href="index.html" class="navbar-brand p-0">
+                    <h1 class="text-secondary display-6"><i class="fas fa-city text-primary me-3"></i>Constra</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto pt-2 pt-lg-0">
+                        <a href="index.html" class:list={["nav-item nav-link", { active: active === "index" }]}>Home</a>
+                        <a href="about.html" class:list={["nav-item nav-link", { active: active === "about" }]}>About</a>
+                        <a href="service.html" class:list={["nav-item nav-link", { active: active === "service" }]}>Services</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-lg-0">
+                                <a href="feature.html" class:list={["dropdown-item", { active: active === "feature" }]}>Features</a>
+                                <a href="blog.html" class:list={["dropdown-item", { active: active === "blog" }]}>Our Blog</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class:list={["nav-item nav-link", { active: active === "contact" }]}>Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Navbar End -->

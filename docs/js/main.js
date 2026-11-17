@@ -3,11 +3,13 @@
 
     // Spinner
     var spinner = function () {
+        var seen = false;
+        try { seen = sessionStorage.getItem('constra-intro'); sessionStorage.setItem('constra-intro', '1'); } catch (e) {}
         setTimeout(function () {
             if ($('#spinner').length > 0) {
                 $('#spinner').removeClass('show');
             }
-        }, 1);
+        }, seen ? 350 : 1400);
     };
     spinner(0);
     
@@ -16,13 +18,9 @@
     new WOW().init();
 
 
-    // Sticky Navbar
+    // Sticky Navbar: always pinned to the top, gains a shadow once scrolled
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 200) {
-            $('.sticky-top').addClass('shadow-sm').css('top', '0px');
-        } else {
-            $('.sticky-top').removeClass('shadow-sm').css('top', '-200px');
-        }
+        $('.sticky-top').toggleClass('shadow-sm', $(this).scrollTop() > 20);
     });
 
 

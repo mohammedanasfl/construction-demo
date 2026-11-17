@@ -1,0 +1,11 @@
+---
+import Base from "../layouts/Base.astro";
+import Blog from "../components/Blog.astro";
+import PageHeader from "../components/PageHeader.astro";
+---
+<Base title="Our Blog | Constra" active="blog">
+    <PageHeader title="Our News & Blog" crumb="News & Blog" />
+
+    <Blog light={false} />
+
+</Base>
